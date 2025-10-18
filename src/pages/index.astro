@@ -1,16 +1,217 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import PortfolioSlider from '../components/react/PortfolioSlider';
+import { Globe, TrendingUp, Repeat, CheckCircle2, Zap, Target, Award, ArrowRight } from 'lucide-react';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Renaissance - Création de Sites Web & SEO Local pour Artisans">
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Services Section -->
+  <section class="py-24 bg-dark-800/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          Nos <span class="text-gradient">Services</span>
+        </h2>
+        <p class="text-fluid-lg text-gray-400 max-w-2xl mx-auto">
+          Des solutions complètes pour développer votre présence en ligne et attirer plus de clients
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <ServiceCard
+          icon={Globe}
+          title="Site Vitrine Sur-Mesure"
+          description="Design moderne, rapide et optimisé SEO dès la création. Votre site est votre meilleur commercial 24/7."
+          price="1 800€"
+          href="/services#creation-site"
+          delay="0s"
+        />
+        <ServiceCard
+          icon={TrendingUp}
+          title="Référencement Local"
+          description="Apparaissez en 1ère page Google dans votre ville. Attirez des clients qui cherchent vos services près de chez eux."
+          price="Inclus"
+          href="/services#seo-local"
+          delay="0.1s"
+        />
+        <ServiceCard
+          icon={Repeat}
+          title="Abonnement Mensuel"
+          description="Suivi continu, optimisation et reporting mensuel. Votre visibilité augmente mois après mois."
+          price="200€/mois"
+          href="/tarifs"
+          delay="0.2s"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-primary-500/5 to-dark-900"></div>
+
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          Pourquoi <span class="text-gradient">Renaissance</span> ?
+        </h2>
+        <p class="text-fluid-lg text-gray-400 max-w-2xl mx-auto">
+          Votre partenaire de confiance pour réussir en ligne
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {[
+          {
+            icon: Target,
+            title: 'Spécialiste SEO Local',
+            description: 'Expertise prouvée en référencement local pour artisans et commerces',
+          },
+          {
+            icon: Zap,
+            title: 'Sites Ultra-Rapides',
+            description: 'Score Lighthouse 95+ garanti, performances optimales',
+          },
+          {
+            icon: CheckCircle2,
+            title: 'Accompagnement Personnalisé',
+            description: 'Suivi individuel et conseils adaptés à votre activité',
+          },
+          {
+            icon: Award,
+            title: 'Tarifs Transparents',
+            description: 'Prix clairs, sans surprise, devis détaillé gratuit',
+          },
+        ].map((item, index) => (
+          <div
+            class="text-center group animate-slide-up"
+            style={`animation-delay: ${index * 0.1}s;`}
+          >
+            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary-500 to-accent rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+              <item.icon size={36} className="text-white" />
+            </div>
+            <h3 class="text-xl font-heading font-bold text-white mb-3">{item.title}</h3>
+            <p class="text-gray-400 leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="py-24 bg-dark-800/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          Nos <span class="text-gradient">Réalisations</span>
+        </h2>
+        <p class="text-fluid-lg text-gray-400 max-w-2xl mx-auto">
+          Découvrez comment nous avons aidé nos clients à transformer leur visibilité en ligne
+        </p>
+      </div>
+
+      <PortfolioSlider client:load />
+
+      <div class="text-center mt-12">
+        <a href="/realisations" class="btn-secondary inline-flex items-center space-x-2">
+          <span>Voir tous les projets</span>
+          <ArrowRight size={20} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          Ce Que Disent <span class="text-gradient">Nos Clients</span>
+        </h2>
+        <p class="text-fluid-lg text-gray-400 max-w-2xl mx-auto">
+          Leur succès est notre meilleure publicité
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {[
+          {
+            quote: "Depuis que Renaissance a refait mon site et optimisé mon SEO local, j'ai doublé mes demandes de devis. Mon téléphone n'arrête pas de sonner !",
+            name: 'Pierre Durand',
+            company: 'Élagage Pro Services',
+            image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop',
+          },
+          {
+            quote: "Un vrai professionnel ! Site magnifique, rapide, et surtout je suis enfin visible sur Google. Merci pour votre accompagnement.",
+            name: 'Sophie Martin',
+            company: 'Plomberie Martin & Fils',
+            image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
+          },
+          {
+            quote: "Excellent travail sur le SEO local. Je suis passé de la 3ème page à la 1ère en quelques mois. Le ROI est impressionnant.",
+            name: 'Thomas Petit',
+            company: 'Électricité TP',
+            image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
+          },
+        ].map((testimonial, index) => (
+          <div
+            class="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 animate-slide-up"
+            style={`animation-delay: ${index * 0.1}s;`}
+          >
+            <div class="mb-6">
+              <svg class="w-10 h-10 text-accent/30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+            <p class="text-gray-300 mb-6 leading-relaxed italic">"{testimonial.quote}"</p>
+            <div class="flex items-center space-x-4">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                class="w-12 h-12 rounded-full object-cover"
+              />
+              <div>
+                <p class="font-semibold text-white">{testimonial.name}</p>
+                <p class="text-sm text-gray-400">{testimonial.company}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-accent/20 to-primary-500/20"></div>
+    <div class="absolute inset-0 backdrop-blur-3xl"></div>
+
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-fluid-4xl md:text-5xl font-heading font-bold text-white mb-6">
+          Prêt à <span class="text-gradient">Booster</span> Votre Visibilité ?
+        </h2>
+        <p class="text-fluid-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+          Obtenez un devis gratuit et personnalisé sous 24h. Sans engagement, juste des solutions concrètes pour votre business.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/contact" class="btn-primary inline-flex items-center space-x-2 group text-lg px-8 py-4">
+            <span>Obtenir un devis gratuit</span>
+            <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a href="/tarifs" class="btn-secondary text-lg px-8 py-4">
+            Voir les tarifs
+          </a>
+        </div>
+        <p class="text-sm text-gray-400 mt-6">
+          Devis gratuit sous 24h • Sans engagement • Réponse garantie
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

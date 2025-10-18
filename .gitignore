@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Next.js (if exists)
+.next/
+
+# Editor
+.vscode/
+.claude/

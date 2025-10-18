@@ -1,0 +1,243 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ExternalLink, TrendingUp, Clock } from 'lucide-react';
+
+const projects = [
+  {
+    id: 1,
+    title: 'Élagage Pro Services',
+    sector: 'Élagueur',
+    description: 'Refonte complète du site web et optimisation SEO local pour cet élagueur professionnel basé à Lyon.',
+    result: '+200% de visibilité locale en 3 mois',
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=600&fit=crop',
+    tags: ['Site Vitrine', 'SEO Local', 'Design Modern'],
+    stats: [
+      { label: 'Trafic', value: '+200%' },
+      { label: 'Positions Google', value: 'Top 3' },
+      { label: 'Délai', value: '6 semaines' }
+    ]
+  },
+  {
+    id: 2,
+    title: 'Plomberie Dupont',
+    sector: 'Plombier',
+    description: 'Création d\'un site vitrine moderne avec système de prise de rendez-vous en ligne et optimisation SEO.',
+    result: '+150% de demandes de devis',
+    image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop',
+    tags: ['Site Vitrine', 'SEO', 'Formulaire'],
+    stats: [
+      { label: 'Demandes', value: '+150%' },
+      { label: 'Score Lighthouse', value: '98' },
+      { label: 'Délai', value: '3 semaines' }
+    ]
+  },
+  {
+    id: 3,
+    title: 'Boulangerie Artisanale',
+    sector: 'Artisan boulanger',
+    description: 'Site vitrine élégant avec galerie de produits et optimisation pour le référencement local.',
+    result: '1ère page Google en 2 mois',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=600&fit=crop',
+    tags: ['Site Vitrine', 'Galerie', 'SEO Local'],
+    stats: [
+      { label: 'Position Google', value: '#1' },
+      { label: 'Trafic', value: '+180%' },
+      { label: 'Délai', value: '4 semaines' }
+    ]
+  },
+  {
+    id: 4,
+    title: 'Électricité Martin',
+    sector: 'Électricien',
+    description: 'Refonte du site existant avec un design moderne et stratégie SEO complète pour augmenter la visibilité.',
+    result: '+300% de trafic organique',
+    image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=600&fit=crop',
+    tags: ['Refonte', 'SEO Avancé', 'Blog'],
+    stats: [
+      { label: 'Trafic', value: '+300%' },
+      { label: 'Leads', value: '+250%' },
+      { label: 'Délai', value: '5 semaines' }
+    ]
+  },
+  {
+    id: 5,
+    title: 'Menuiserie Bois & Art',
+    sector: 'Menuisier',
+    description: 'Création d\'un site portfolio élégant avec galerie de réalisations et formulaire de devis en ligne.',
+    result: '+120% de demandes de devis',
+    image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=600&fit=crop',
+    tags: ['Portfolio', 'Galerie', 'SEO'],
+    stats: [
+      { label: 'Devis', value: '+120%' },
+      { label: 'Engagement', value: '+90%' },
+      { label: 'Délai', value: '4 semaines' }
+    ]
+  },
+  {
+    id: 6,
+    title: 'Toiture & Couverture Pro',
+    sector: 'Couvreur',
+    description: 'Site web complet avec blog SEO et optimisation pour les recherches locales de services de toiture.',
+    result: 'Top 3 Google Maps',
+    image: 'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&h=600&fit=crop',
+    tags: ['Site Complet', 'Blog SEO', 'Google Maps'],
+    stats: [
+      { label: 'Position Maps', value: 'Top 3' },
+      { label: 'Appels', value: '+160%' },
+      { label: 'Délai', value: '6 semaines' }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Portfolio - Nos Réalisations Web & SEO | Renaissance"
+  description="Découvrez nos projets réussis : sites web modernes et stratégies SEO pour artisans et PME. Résultats concrets et mesurables."
+>
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-fluid-5xl font-heading font-bold text-white mb-6">
+        Nos <span class="text-gradient">Réalisations</span>
+      </h1>
+      <p class="text-fluid-xl text-gray-300 max-w-3xl mx-auto">
+        Découvrez comment nous avons aidé nos clients à transformer leur visibilité en ligne
+        et générer plus de clients
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {projects.map((project, index) => (
+          <div
+            class="group glass rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:-translate-y-2 animate-slide-up flex flex-col"
+            style={`animation-delay: ${index * 0.1}s;`}
+          >
+            <!-- Image -->
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent"></div>
+
+              <!-- Tags -->
+              <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span class="px-3 py-1 bg-dark-900/80 backdrop-blur-sm border border-white/10 rounded-full text-xs text-gray-300">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <!-- Sector Badge -->
+              <div class="absolute bottom-4 left-4">
+                <span class="px-3 py-1 bg-accent/20 border border-accent rounded-full text-sm text-accent font-semibold">
+                  {project.sector}
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="text-2xl font-heading font-bold text-white mb-3 group-hover:text-gradient transition-colors">
+                {project.title}
+              </h3>
+
+              <p class="text-gray-400 mb-4 leading-relaxed flex-grow">
+                {project.description}
+              </p>
+
+              <!-- Result -->
+              <div class="flex items-center space-x-2 mb-4 p-3 bg-accent/10 border border-accent/20 rounded-lg">
+                <TrendingUp size={20} className="text-accent flex-shrink-0" />
+                <span class="text-sm text-white font-semibold">{project.result}</span>
+              </div>
+
+              <!-- Stats -->
+              <div class="grid grid-cols-3 gap-3 mb-4">
+                {project.stats.map((stat) => (
+                  <div class="text-center">
+                    <div class="text-lg font-bold text-gradient">{stat.value}</div>
+                    <div class="text-xs text-gray-500">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <!-- CTA -->
+              <button class="w-full mt-auto px-4 py-3 bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent rounded-lg text-white font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group">
+                <span>Voir le cas client</span>
+                <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-24 bg-dark-800/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          Résultats <span class="text-gradient">Mesurables</span>
+        </h2>
+        <p class="text-fluid-lg text-gray-400 mb-16">
+          Nos clients obtiennent des résultats concrets
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { value: '50+', label: 'Projets réalisés' },
+            { value: '+180%', label: 'Trafic moyen' },
+            { value: '95+', label: 'Score Lighthouse' },
+            { value: '24h', label: 'Support réactif' }
+          ].map((stat, index) => (
+            <div
+              class="glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300 animate-scale-in"
+              style={`animation-delay: ${index * 0.1}s;`}
+            >
+              <div class="text-fluid-3xl font-bold text-gradient mb-2">{stat.value}</div>
+              <div class="text-sm text-gray-400">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-accent/20 to-primary-500/20"></div>
+    <div class="absolute inset-0 backdrop-blur-3xl"></div>
+
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-fluid-4xl font-heading font-bold text-white mb-6">
+          Votre Projet Sera le Prochain ?
+        </h2>
+        <p class="text-fluid-lg text-gray-300 mb-10">
+          Discutons de vos objectifs et créons ensemble votre succès en ligne
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/contact" class="btn-primary inline-flex items-center space-x-2">
+            <span>Démarrer mon projet</span>
+          </a>
+          <a href="/tarifs" class="btn-secondary">
+            Voir les tarifs
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
