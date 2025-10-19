@@ -49,16 +49,16 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Électricité Martin',
-    sector: 'Électricien',
-    description: 'Refonte du site existant avec un design moderne et stratégie SEO complète pour augmenter la visibilité.',
-    result: '+300% de trafic organique',
-    image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=600&fit=crop',
-    tags: ['Refonte', 'SEO Avancé', 'Blog'],
+    title: 'Alexandre Moreau - Coach Sportif',
+    sector: 'Coaching Sportif & Mental',
+    description: 'Création d\'un site vitrine one-page moderne pour coach sportif et mental basé à Paris. Design impactant avec formulaire de réservation.',
+    result: '+250% de réservations en 3 mois',
+    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop',
+    tags: ['Site Vitrine', 'One-Page', 'SEO Local'],
     stats: [
-      { label: 'Trafic', value: '+300%' },
-      { label: 'Leads', value: '+250%' },
-      { label: 'Délai', value: '5 semaines' }
+      { label: 'Réservations', value: '+250%' },
+      { label: 'Score Design', value: '10/10' },
+      { label: 'Délai', value: '3 semaines' }
     ]
   },
   {
@@ -178,10 +178,14 @@ const projects = [
                 </div>
 
                 <!-- CTA -->
-                <button class="w-full mt-auto px-4 py-3 bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent rounded-lg text-white font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group">
-                  <span>Voir le cas client</span>
+                <a
+                  href={project.id === 4 ? '/demos/coach-alexandre-moreau/index.html' : '#'}
+                  target={project.id === 4 ? '_blank' : '_self'}
+                  class="w-full mt-auto px-4 py-3 bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent rounded-lg text-white font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group"
+                >
+                  <span>{project.id === 4 ? 'Voir le site démo' : 'Voir le cas client'}</span>
                   <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
             </div>
           </ScrollReveal>
