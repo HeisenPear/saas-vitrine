@@ -1,6 +1,6 @@
 ---
 import MobileMenu from './react/MobileMenu';
-import ThemeToggle from './react/ThemeToggle';
+import ScrollProgress from './react/ScrollProgress';
 
 const navLinks = [
   { href: '/', label: 'Accueil' },
@@ -12,6 +12,9 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ];
 ---
+
+<!-- Scroll Progress Bar -->
+<ScrollProgress client:load />
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-xl border-b border-white/10">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,15 +41,8 @@ const navLinks = [
         ))}
       </ul>
 
-      <!-- Right Side Actions -->
-      <div class="flex items-center space-x-4">
-        <ThemeToggle client:load />
-        <a
-          href="/contact"
-          class="hidden sm:block btn-primary"
-        >
-          Devis Gratuit
-        </a>
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
         <MobileMenu client:load links={navLinks} />
       </div>
     </div>

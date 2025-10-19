@@ -165,21 +165,26 @@ export default function PortfolioSlider() {
         </button>
       </div>
 
-      {/* Dots Navigation */}
+      {/* Dots Navigation - CORRECTED */}
       <div className="flex items-center justify-center space-x-3 mt-8">
         {projects.map((_, index) => (
-          <button
+          <motion.button
             key={index}
             onClick={() => {
               setDirection(index > currentIndex ? 1 : -1);
               setCurrentIndex(index);
             }}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? 'w-8 bg-accent'
-                : 'w-2 bg-white/30 hover:bg-white/50'
-            }`}
+            className={`
+              h-3 rounded-full transition-all duration-300
+              ${index === currentIndex
+                ? 'w-8 bg-primary-500 shadow-lg shadow-primary-500/50'
+                : 'w-3 bg-dark-600 hover:bg-dark-500'
+              }
+            `}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
             aria-label={`Go to project ${index + 1}`}
+            aria-current={index === currentIndex ? 'true' : 'false'}
           />
         ))}
       </div>
