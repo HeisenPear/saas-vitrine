@@ -1,0 +1,6 @@
+import{j as e,m as n}from"./proxy.CWcLdRko.js";import{r as c}from"./index.Be8AcK8B.js";import{c as l}from"./createLucideIcon.BO8IHSU3.js";import{A as d}from"./index.CHQbkhPm.js";/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const m=[["path",{d:"m6 9 6 6 6-6",key:"qrunsl"}]],h=l("chevron-down",m);function j({items:i}){const[a,o]=c.useState(0),r=t=>{o(a===t?null:t)};return e.jsx("div",{className:"space-y-4",children:i.map((t,s)=>e.jsxs("div",{className:"glass rounded-xl overflow-hidden hover:bg-white/10 transition-colors",children:[e.jsxs("button",{onClick:()=>r(s),className:"w-full flex items-center justify-between p-6 text-left",children:[e.jsx("span",{className:"text-lg font-semibold text-white pr-8",children:t.question}),e.jsx(n.div,{animate:{rotate:a===s?180:0},transition:{duration:.3},className:"flex-shrink-0",children:e.jsx(h,{size:24,className:"text-accent"})})]}),e.jsx(d,{initial:!1,children:a===s&&e.jsx(n.div,{initial:{height:0,opacity:0},animate:{height:"auto",opacity:1},exit:{height:0,opacity:0},transition:{duration:.3,ease:"easeInOut"},className:"overflow-hidden",children:e.jsx("div",{className:"px-6 pb-6 text-gray-300 leading-relaxed",children:t.answer})})})]},s))})}export{j as default};
