@@ -12,6 +12,7 @@
     "@astrojs/react": "^4.4.0",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/vercel": "^8.2.10",
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.2.2",

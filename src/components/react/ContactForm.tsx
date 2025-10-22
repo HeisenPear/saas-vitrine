@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const contactSchema = z.object({
   fullName: z.string().min(2, 'Le nom doit contenir au moins 2 caractères'),
@@ -37,13 +38,40 @@ export default function ContactForm() {
     setSubmitStatus(null);
 
     try {
-      // Simulation d'envoi (à remplacer par EmailJS ou Formspree)
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      console.log('Form data:', data);
+      // Récupération des variables d'environnement
+      const serviceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      // Vérification que les variables sont définies
+      if (!serviceId || !templateId || !publicKey) {
+        console.error('EmailJS credentials are missing. Please check your .env file.');
+        throw new Error('Configuration EmailJS manquante');
+      }
+
+      // Préparation des données pour EmailJS
+      const templateParams = {
+        from_name: data.fullName,
+        from_email: data.email,
+        phone: data.phone || 'Non renseigné',
+        project_type: data.projectType,
+        budget: data.budget,
+        message: data.message,
+        to_email: 'renaissance-toursweb@gmail.com',
+      };
+
+      // Envoi via EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
 
       setSubmitStatus('success');
       reset();
     } catch (error) {
+      console.error('Error sending email:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
