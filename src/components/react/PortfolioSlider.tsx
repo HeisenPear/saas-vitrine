@@ -127,9 +127,6 @@ export default function PortfolioSlider() {
 
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                <div className="inline-block px-3 py-1 bg-accent/20 border border-accent rounded-full mb-4">
-                  <span className="text-sm text-accent">{currentProject.sector}</span>
-                </div>
                 <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                   {currentProject.title}
                 </h3>
