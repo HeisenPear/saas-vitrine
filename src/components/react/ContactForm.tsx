@@ -51,13 +51,18 @@ export default function ContactForm() {
 
       // Préparation des données pour EmailJS
       const templateParams = {
+        name: data.fullName,
         from_name: data.fullName,
+        to_name: 'Renaissance',
+        email: data.email,
         from_email: data.email,
+        reply_to: data.email,
+        telephone: data.phone || 'Non renseigné',
         phone: data.phone || 'Non renseigné',
+        type_projet: data.projectType,
         project_type: data.projectType,
         budget: data.budget,
         message: data.message,
-        to_email: 'renaissance-toursweb@gmail.com',
       };
 
       // Envoi via EmailJS
