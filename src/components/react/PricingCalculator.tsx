@@ -7,10 +7,10 @@ export default function PricingCalculator() {
   const [hasBlog, setHasBlog] = useState(false);
   const [hasEcommerce, setHasEcommerce] = useState(false);
   const [hasSeo, setHasSeo] = useState(true);
-  const [total, setTotal] = useState(1800);
+  const [total, setTotal] = useState(1500);
 
   useEffect(() => {
-    let price = 1800; // Prix de base
+    let price = 1500; // Prix de base
 
     // Pages supplémentaires (au-delà de 5)
     if (pages > 5) {

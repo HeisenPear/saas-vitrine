@@ -170,12 +170,12 @@ Avant de choisir un prestataire, demandez :
 
 Pour un site vitrine d'artisan ou de PME :
 - **Minimum acceptable :** 1 500€
-- **Prix raisonnable :** 1 800€ - 2 500€
+- **Prix raisonnable :** 1 500€ - 2 500€
 - **Haut de gamme :** 3 000€ - 5 000€
 
 Ne cherchez pas le moins cher. Cherchez le meilleur rapport qualité/prix.
 
-Un site à 1 800€ qui vous rapporte 3 clients/mois est infiniment plus rentable qu'un site à 300€ qui ne vous rapporte rien.
+Un site à 1 500€ qui vous rapporte 3 clients/mois est infiniment plus rentable qu'un site à 300€ qui ne vous rapporte rien.
 
 ---
 
