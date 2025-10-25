@@ -15,7 +15,28 @@ export default defineConfig({
       enabled: true
     }
   }),
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+      // Custom configuration for different page types
+      customPages: [
+        'https://renaissance-web.fr/',
+        'https://renaissance-web.fr/services',
+        'https://renaissance-web.fr/tarifs',
+        'https://renaissance-web.fr/contact',
+        'https://renaissance-web.fr/a-propos',
+        'https://renaissance-web.fr/realisations',
+        'https://renaissance-web.fr/blog'
+      ],
+      filter: (page) => {
+        // Exclude pages you don't want in the sitemap
+        return !page.includes('/admin') && !page.includes('/draft');
+      },
+    }),
+  ],
 
   vite: {
     plugins: [tailwindcss()]

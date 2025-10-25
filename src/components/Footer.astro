@@ -78,29 +78,41 @@ const quickLinks = [
         </ul>
       </div>
 
-      <!-- Contact Info -->
+      <!-- Contact Info - Structured with Schema.org -->
       <div>
         <h3 class="text-lg font-bold text-white mb-4">Contact</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start space-x-3">
-            <Mail size={20} className="text-accent mt-1 flex-shrink-0" />
-            <a href="mailto:renaissance.toursweb@gmail.com" class="text-gray-400 hover:text-accent transition-colors">
-              renaissance.toursweb@gmail.com
-            </a>
-          </li>
-          <li class="flex items-start space-x-3">
-            <Phone size={20} className="text-accent mt-1 flex-shrink-0" />
-            <a href="tel:+33782760284" class="text-gray-400 hover:text-accent transition-colors">
-              07 82 76 02 84
-            </a>
-          </li>
-          <li class="flex items-start space-x-3">
-            <MapPin size={20} className="text-accent mt-1 flex-shrink-0" />
-            <span class="text-gray-400">
-              Tours, France
-            </span>
-          </li>
-        </ul>
+        <address class="not-italic" itemscope itemtype="https://schema.org/LocalBusiness">
+          <meta itemprop="name" content="Renaissance Web" />
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <Mail size={20} className="text-accent mt-1 flex-shrink-0" aria-hidden="true" />
+              <a
+                href="mailto:renaissance.toursweb@gmail.com"
+                class="text-gray-400 hover:text-accent transition-colors"
+                itemprop="email"
+              >
+                renaissance.toursweb@gmail.com
+              </a>
+            </li>
+            <li class="flex items-start space-x-3">
+              <Phone size={20} className="text-accent mt-1 flex-shrink-0" aria-hidden="true" />
+              <a
+                href="tel:+33782760284"
+                class="text-gray-400 hover:text-accent transition-colors"
+                itemprop="telephone"
+              >
+                07 82 76 02 84
+              </a>
+            </li>
+            <li class="flex items-start space-x-3" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+              <MapPin size={20} className="text-accent mt-1 flex-shrink-0" aria-hidden="true" />
+              <span class="text-gray-400">
+                <span itemprop="addressLocality">Tours</span>,
+                <span itemprop="addressCountry">France</span>
+              </span>
+            </li>
+          </ul>
+        </address>
         <div class="mt-4 p-3 bg-accent/10 border border-accent/20 rounded-lg">
           <p class="text-sm text-gray-300">
             Réponse sous <span class="text-accent font-semibold">24h</span>
