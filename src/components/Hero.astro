@@ -16,19 +16,19 @@ import { ArrowRight, Sparkles } from 'lucide-react';
     <div class="max-w-4xl mx-auto text-center">
       <!-- Badge -->
       <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8 animate-fade-in">
-        <Sparkles size={16} className="text-accent" />
-        <span class="text-sm text-gray-300">Spécialiste SEO Local</span>
+        <Sparkles size={18} className="text-accent" />
+        <span class="text-sm md:text-base text-gray-300">Spécialiste SEO Local</span>
       </div>
 
       <!-- Main Heading -->
-      <h1 class="text-fluid-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 animate-slide-up">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-6 animate-slide-up leading-tight">
         <span class="text-gradient">Transformez Votre</span>
         <br />
         <span class="text-white">Visibilité En Ligne</span>
       </h1>
 
       <!-- Subheading -->
-      <p class="text-fluid-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
+      <p class="text-base md:text-lg lg:text-xl text-gray-300 mb-12 max-w-2xl mx-auto animate-slide-up leading-relaxed" style="animation-delay: 0.2s;">
         Sites web performants + SEO local pour artisans et commerces.<br />
         Augmentez votre visibilité et générez plus de clients.
       </p>
@@ -59,8 +59,8 @@ import { ArrowRight, Sparkles } from 'lucide-react';
           { value: '24h', label: 'Réponse garantie' },
         ].map((stat) => (
           <div class="text-center animate-scale-in">
-            <div class="text-fluid-3xl font-bold text-gradient mb-2">{stat.value}</div>
-            <div class="text-sm text-gray-400">{stat.label}</div>
+            <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-2">{stat.value}</div>
+            <div class="text-sm md:text-base text-gray-400">{stat.label}</div>
           </div>
         ))}
       </div>

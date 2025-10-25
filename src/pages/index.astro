@@ -5,14 +5,10 @@ import ScrollReveal from '../components/react/ScrollReveal';
 import ParallaxSection from '../components/react/ParallaxSection';
 import AnimatedCounter from '../components/react/AnimatedCounter';
 import PortfolioSlider from '../components/react/PortfolioSlider';
-import ScrollProgress from '../components/react/ScrollProgress';
 import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
 ---
 
 <Layout title="Renaissance - Création de Sites Web & SEO Local pour Artisans">
-  <!-- Scroll Progress Bar -->
-  <ScrollProgress client:load />
-
   <!-- Hero Section -->
   <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
     <!-- Animated Background -->
@@ -29,14 +25,14 @@ import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, Arro
         <!-- Badge -->
         <ScrollReveal client:load delay={0}>
           <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8">
-            <Sparkles size={16} className="text-accent" />
-            <span class="text-sm text-gray-300">Spécialiste SEO Local</span>
+            <Sparkles size={18} className="text-accent" />
+            <span class="text-sm md:text-base text-gray-300">Spécialiste SEO Local</span>
           </div>
         </ScrollReveal>
 
         <!-- Main Heading -->
         <ScrollReveal client:load delay={0.1}>
-          <h1 class="text-fluid-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-6 leading-tight">
             <span class="text-gradient">Transformez Votre</span>
             <br />
             <span class="text-white">Visibilité En Ligne</span>
@@ -45,7 +41,7 @@ import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, Arro
 
         <!-- Subheading -->
         <ScrollReveal client:load delay={0.2}>
-          <p class="text-fluid-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+          <p class="text-base md:text-lg lg:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
             Sites web performants + SEO local pour artisans et commerces.<br />
             Augmentez votre visibilité et générez plus de clients.
           </p>
@@ -74,35 +70,35 @@ import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, Arro
         <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
           <ScrollReveal client:load delay={0.4}>
             <div class="text-center">
-              <div class="text-fluid-3xl font-bold text-gradient mb-2">
+              <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-2">
                 <AnimatedCounter client:load value={50} suffix="+" />
               </div>
-              <div class="text-sm text-gray-400">Clients satisfaits</div>
+              <div class="text-sm md:text-base text-gray-400">Clients satisfaits</div>
             </div>
           </ScrollReveal>
 
           <ScrollReveal client:load delay={0.5}>
             <div class="text-center">
-              <div class="text-fluid-3xl font-bold text-gradient mb-2">
+              <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-2">
                 <AnimatedCounter client:load value={95} suffix="+" />
               </div>
-              <div class="text-sm text-gray-400">Score Lighthouse</div>
+              <div class="text-sm md:text-base text-gray-400">Score Lighthouse</div>
             </div>
           </ScrollReveal>
 
           <ScrollReveal client:load delay={0.6}>
             <div class="text-center">
-              <div class="text-fluid-3xl font-bold text-gradient mb-2">
+              <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-2">
                 +<AnimatedCounter client:load value={150} suffix="%" />
               </div>
-              <div class="text-sm text-gray-400">Trafic moyen</div>
+              <div class="text-sm md:text-base text-gray-400">Trafic moyen</div>
             </div>
           </ScrollReveal>
 
           <ScrollReveal client:load delay={0.7}>
             <div class="text-center">
-              <div class="text-fluid-3xl font-bold text-gradient mb-2">24h</div>
-              <div class="text-sm text-gray-400">Réponse garantie</div>
+              <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-2">24h</div>
+              <div class="text-sm md:text-base text-gray-400">Réponse garantie</div>
             </div>
           </ScrollReveal>
         </div>
@@ -122,12 +118,12 @@ import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, Arro
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <ScrollReveal client:load delay={0}>
-          <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
             Nos <span class="text-gradient">Services</span>
           </h2>
         </ScrollReveal>
         <ScrollReveal client:load delay={0.1}>
-          <p class="text-fluid-lg text-gray-400 max-w-2xl mx-auto">
+          <p class="text-base md:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto">
             Des solutions complètes pour développer votre présence en ligne et attirer plus de clients
           </p>
         </ScrollReveal>
@@ -169,12 +165,12 @@ import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, Arro
     <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <ScrollReveal client:load delay={0}>
-          <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
             Pourquoi <span class="text-gradient">Renaissance</span> ?
           </h2>
         </ScrollReveal>
         <ScrollReveal client:load delay={0.1}>
-          <p class="text-fluid-lg text-gray-400 max-w-2xl mx-auto">
+          <p class="text-base md:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto">
             Votre partenaire de confiance pour réussir en ligne
           </p>
         </ScrollReveal>
@@ -222,12 +218,12 @@ import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, Arro
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <ScrollReveal client:load delay={0}>
-          <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
             Nos <span class="text-gradient">Réalisations</span>
           </h2>
         </ScrollReveal>
         <ScrollReveal client:load delay={0.1}>
-          <p class="text-fluid-lg text-gray-400 max-w-2xl mx-auto">
+          <p class="text-base md:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto">
             Découvrez comment nous avons aidé nos clients à transformer leur visibilité en ligne
           </p>
         </ScrollReveal>
@@ -253,12 +249,12 @@ import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, Arro
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <ScrollReveal client:load delay={0}>
-          <h2 class="text-fluid-4xl font-heading font-bold text-white mb-4">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
             Ce Que Disent <span class="text-gradient">Nos Clients</span>
           </h2>
         </ScrollReveal>
         <ScrollReveal client:load delay={0.1}>
-          <p class="text-fluid-lg text-gray-400 max-w-2xl mx-auto">
+          <p class="text-base md:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto">
             Leur succès est notre meilleure publicité
           </p>
         </ScrollReveal>
@@ -319,12 +315,12 @@ import { Globe, TrendingUp, Repeat, Target, Zap, Award, Heart, ChevronDown, Arro
     <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <ScrollReveal client:load delay={0}>
-          <h2 class="text-fluid-4xl md:text-5xl font-heading font-bold text-white mb-6">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
             Prêt à <span class="text-gradient">Booster</span> Votre Visibilité ?
           </h2>
         </ScrollReveal>
         <ScrollReveal client:load delay={0.1}>
-          <p class="text-fluid-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+          <p class="text-base md:text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
             Obtenez un devis gratuit et personnalisé sous 24h. Sans engagement, juste des solutions concrètes pour votre business.
           </p>
         </ScrollReveal>
