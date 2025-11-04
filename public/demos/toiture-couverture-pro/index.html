@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toiture & Couverture Pro - Couvreur Professionnel</title>
+    <meta name="description" content="Toiture & Couverture Pro, expert en couverture, charpente et zinguerie. Devis gratuit, intervention rapide, garantie décennale.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #c41e3a;
+            --primary-dark: #9a1730;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light-gray: #ecf0f1;
+            --dark-gray: #34495e;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.7;
+            color: var(--secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .urgent-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(196, 30, 58, 0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)),
+                        url('https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=1400&h=700&fit=crop') center/cover;
+            color: var(--white);
+            padding: 180px 0 100px;
+            margin-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-highlight {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-feature::before {
+            content: '✓';
+            background: var(--primary);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(196, 30, 58, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--secondary);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title .highlight {
+            color: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--light-gray);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-item {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .why-item h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Guarantees Section */
+        .guarantees {
+            padding: 80px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .guarantees h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .guarantee-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .guarantee-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: var(--light-gray);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .author-info strong {
+            display: block;
+            color: var(--secondary);
+        }
+
+        .stars {
+            color: #f39c12;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(196, 30, 58, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .top-bar .container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div>📍 Intervention dans toute l'Île-de-France</div>
+                <div>
+                    <a href="tel:0612345678">📞 06 12 34 56 78</a>
+                    <a href="mailto:contact@toiture-pro.fr">✉️ contact@toiture-pro.fr</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav>
+                <div class="logo">🏠 TOITURE PRO</div>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="urgent-btn">⚡ Urgence 24/7</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Votre Expert en <span class="hero-highlight">Toiture & Couverture</span></h1>
+                <p>Professionnel qualifié RGE avec 20 ans d'expérience. Garantie décennale, devis gratuit, intervention rapide partout en Île-de-France.</p>
+                <div class="hero-features">
+                    <div class="hero-feature">Garantie Décennale</div>
+                    <div class="hero-feature">Qualifié RGE</div>
+                    <div class="hero-feature">Devis Gratuit</div>
+                    <div class="hero-feature">Intervention 24/7</div>
+                </div>
+                <div>
+                    <a href="#contact" class="btn btn-primary">Demander un Devis</a>
+                    <a href="tel:0612345678" class="btn btn-secondary">Appeler Maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos <span class="highlight">Services</span></h2>
+                <p>Solutions complètes pour tous vos travaux de toiture</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Couverture Toiture</h3>
+                    <p>Pose et rénovation de toitures neuves ou anciennes. Tuiles, ardoises, zinc, bac acier. Travail soigné et garantie décennale.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Charpente</h3>
+                    <p>Installation et réparation de charpentes traditionnelles et industrielles. Traitement et renforcement de charpentes anciennes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Étanchéité & Zinguerie</h3>
+                    <p>Étanchéité de toiture-terrasse, gouttières, chéneaux, noues. Travaux de zinguerie complets et réparations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Rénovation Toiture</h3>
+                    <p>Rénovation complète de toitures anciennes. Démoussage, traitement, remplacement de tuiles cassées.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌡️</div>
+                    <h3>Isolation Toiture</h3>
+                    <p>Isolation thermique de combles et toitures. Économies d'énergie garanties. Éligible aux aides de l'État.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Dépannage d'Urgence</h3>
+                    <p>Intervention rapide 24/7 pour fuites, tempêtes, tuiles envolées. Bâchage et réparations d'urgence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Ans d'Expérience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Chantiers Réalisés</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Clients Satisfaits</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Service Urgence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pourquoi <span class="highlight">Nous Choisir</span> ?</h2>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-item">
+                    <div class="why-icon">🎓</div>
+                    <h3>Qualifié RGE</h3>
+                    <p>Certification RGE et assurance décennale pour tous nos travaux</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">⚡</div>
+                    <h3>Intervention Rapide</h3>
+                    <p>Disponible 24/7 pour toutes vos urgences de toiture</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">💰</div>
+                    <h3>Tarifs Transparents</h3>
+                    <p>Devis détaillé gratuit, sans surprise sur le prix final</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">✨</div>
+                    <h3>Travail Soigné</h3>
+                    <p>Expertise artisanale et finitions impeccables</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees Section -->
+    <section class="guarantees">
+        <div class="container">
+            <h2>Nos Garanties</h2>
+            <div class="guarantees-grid">
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">✓</div>
+                    <h3>Garantie Décennale</h3>
+                    <p>Tous nos travaux sont couverts</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">✓</div>
+                    <h3>Matériaux Premium</h3>
+                    <p>Sélection des meilleurs fournisseurs</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">✓</div>
+                    <h3>Devis Gratuit</h3>
+                    <p>Sans engagement sous 24h</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">✓</div>
+                    <h3>SAV Réactif</h3>
+                    <p>Suivi après-vente assuré</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="temoignages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Avis de Nos <span class="highlight">Clients</span></h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Intervention rapide suite à une fuite. Professionnel, efficace et prix raisonnable. Travail impeccable. Je recommande !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <strong>Jean Martin</strong>
+                            <span>Paris 18ème</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Rénovation complète de ma toiture. Équipe sérieuse, délais respectés. Très satisfait du résultat final."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SD</div>
+                        <div class="author-info">
+                            <strong>Sophie Dubois</strong>
+                            <span>Versailles</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Excellent travail d'isolation de combles. Équipe professionnelle et soignée. Maison bien plus confortable maintenant !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PL</div>
+                        <div class="author-info">
+                            <strong>Pierre Lefebvre</strong>
+                            <span>Boulogne-Billancourt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Demandez Votre <span class="highlight">Devis Gratuit</span></h2>
+                <p>Réponse sous 24h garantie</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">📞</div>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <p>06 12 34 56 78<br>Disponible 24/7</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">✉️</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@toiture-couverture-pro.fr</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">📍</div>
+                        <div>
+                            <h3>Zone d'Intervention</h3>
+                            <p>Toute l'Île-de-France<br>Paris et banlieue</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">🏅</div>
+                        <div>
+                            <h3>Certifications</h3>
+                            <p>Qualifié RGE<br>Garantie Décennale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Type de travaux</label>
+                            <select id="service">
+                                <option>Couverture toiture</option>
+                                <option>Charpente</option>
+                                <option>Étanchéité/Zinguerie</option>
+                                <option>Rénovation toiture</option>
+                                <option>Isolation</option>
+                                <option>Dépannage urgent</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Décrivez votre projet</label>
+                            <textarea id="message"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Demander mon devis gratuit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Toiture & Couverture Pro - Tous droits réservés | Site créé par Renaissance</p>
+        </div>
+    </footer>
+</body>
+</html>

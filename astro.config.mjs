@@ -13,8 +13,17 @@ export default defineConfig({
   adapter: vercel({
     webAnalytics: {
       enabled: true
+    },
+    imageService: true,
+    imagesConfig: {
+      domains: ['images.unsplash.com'],
+      sizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     }
   }),
+  image: {
+    domains: ['images.unsplash.com'],
+  },
+  compressHTML: true,
   integrations: [
     react(),
     sitemap({
