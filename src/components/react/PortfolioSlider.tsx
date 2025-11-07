@@ -38,11 +38,27 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: 'Électricité Martin',
-    sector: 'Électricien',
-    result: '+300% de trafic organique',
+    title: 'Arnaud Martin - Coach Sportif',
+    sector: 'Coaching Sportif & Mental',
+    result: '+250% de réservations en 3 mois',
+    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop',
+    link: '/realisations/coach-sportif',
+  },
+  {
+    id: 5,
+    title: 'Menuiserie Bois & Art',
+    sector: 'Menuisier',
+    result: '+120% de demandes de devis',
+    image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=600&fit=crop',
+    link: '/realisations/menuiserie',
+  },
+  {
+    id: 6,
+    title: 'Toiture & Couverture Pro',
+    sector: 'Couvreur',
+    result: 'Top 3 Google Maps',
     image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=600&fit=crop',
-    link: '/realisations/electricite-martin',
+    link: '/realisations/toiture-couverture',
   },
 ];
 
